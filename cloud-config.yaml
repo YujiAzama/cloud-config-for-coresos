@@ -1,0 +1,21 @@
+#cloud-config
+
+  hostname: "Host name"
+  coreos:
+    units:
+      - name: "static.network"
+        runtime: no
+        content: |
+          [Match]
+          Name=<Interface name>
+
+          [Network]
+          Address=<IP Address>/<CIDR>
+          Gateway=<Gateway IP Address>
+          DNS=<DNS Server IP Address>
+  users:
+    - name: "core"
+      passwd: $1$cRMQdgG0$/NR6WbCXDHFd/kMnFbuW21 # This is hash of "password"
+      groups:
+        - "sudo"
+        - "docker"
