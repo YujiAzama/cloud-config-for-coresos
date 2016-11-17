@@ -10,6 +10,12 @@ $ wget https://raw.githubusercontent.com/YujiAzama/cloud-config-for-coresos/mast
 
 ### 環境に合わせて修正する
 
+パスワードのハッシュ生成方法
+
+```bash
+$ openssl passwd -1
+```
+
 ### インストール
 
 ```bash
